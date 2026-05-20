@@ -1,0 +1,117 @@
+.pagina-restaurante {
+    --color-primario: #b71c1c;
+    --color-primario-claro: #e53935;
+    --color-secundario: #ff6f00;
+    --color-negro: #1a1a1a;
+    --color-texto: #3e1a1a;
+    --color-texto-claro: #8b4a4a;
+    --gradiente-restaurante: linear-gradient(135deg, #fbe9e7 0%, #ffccbc 50%, #ffab91 100%);
+    --gradiente-oscuro: linear-gradient(135deg, #3e0000 0%, #5a0000 50%, #7f0000 100%);
+}
+
+.hero-restaurante {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/restaurante-hero.jpg') center/cover no-repeat;
+    background-color: #3e0000;
+}
+
+.hero-negocio-content h1 {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.text-fuego {
+    color: var(--color-secundario);
+}
+
+.hero-negocio-badge {
+    background: rgba(255,111,0,0.15);
+    color: var(--color-secundario);
+    border: 1px solid var(--color-secundario);
+}
+
+.hero-negocio-content p {
+    color: #ddd;
+}
+
+.hero-negocio-stats .stat span {
+    color: var(--color-secundario);
+}
+
+.catalogo-section {
+    background: #faf5f2;
+}
+
+.catalogo-header h2 {
+    color: var(--color-primario-oscuro);
+}
+
+.catalogo-header p {
+    color: var(--color-texto-claro);
+}
+
+.filtro-btn {
+    border-color: #ffccbc;
+    background: #fff;
+    color: var(--color-texto-claro);
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+    background: var(--color-primario);
+    color: #fff;
+    border-color: var(--color-primario);
+}
+
+.producto-card {
+    background: #fff;
+    border: 1px solid #f5d0c5;
+}
+
+.producto-card:hover {
+    box-shadow: 0 20px 40px rgba(183,28,28,0.1);
+    border-color: var(--color-secundario);
+}
+
+.producto-card-image {
+    background: var(--gradiente-restaurante);
+}
+
+.producto-image-placeholder {
+    color: var(--color-primario);
+}
+
+.producto-categoria-tag {
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+}
+
+.producto-quick-view {
+    color: var(--color-primario);
+}
+
+.producto-quick-view:hover {
+    background: var(--color-primario);
+    color: #fff;
+}
+
+.producto-card-nombre {
+    color: var(--color-texto);
+}
+
+.producto-card-desc {
+    color: var(--color-texto-claro);
+}
+
+.producto-card-precio {
+    color: var(--color-primario);
+}
+
+.btn-ver-mas {
+    border-color: var(--color-primario-claro);
+    color: var(--color-primario);
+}
+
+.btn-ver-mas:hover {
+    background: var(--color-primario);
+    color: #fff;
+}

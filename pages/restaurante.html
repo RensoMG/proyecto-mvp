@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante | Directorio Premium</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/restaurante.css">
+    <link rel="stylesheet" href="../assets/css/modal.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="pagina-restaurante">
+    <div class="social-bar-top">
+        <div class="social-bar-container">
+            <span class="social-tagline">Síguenos en redes</span>
+            <div class="social-icons-top">
+                <a href="#" class="social-icon-top facebook"><i class="fab fa-facebook-f"></i><span class="social-label">Facebook</span></a>
+                <a href="#" class="social-icon-top instagram"><i class="fab fa-instagram"></i><span class="social-label">Instagram</span></a>
+                <a href="#" class="social-icon-top tiktok"><i class="fab fa-tiktok"></i><span class="social-label">TikTok</span></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fas fa-layer-group"></i></span>
+                <span class="logo-text">Directorio<span class="logo-highlight">Premium</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active dropdown-toggle">Negocios <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="farmacia.html"><i class="fas fa-prescription-bottle-medical"></i> Farmacia</a></li>
+                        <li><a href="bodega.html"><i class="fas fa-store"></i> Bodega</a></li>
+                        <li><a href="pasteleria.html"><i class="fas fa-cake-candles"></i> Pastelería</a></li>
+                        <li><a href="salon.html"><i class="fas fa-scissors"></i> Salón</a></li>
+                        <li><a href="restaurante.html" class="active"><i class="fas fa-utensils"></i> Restaurante</a></li>
+                        <li><a href="hotel.html"><i class="fas fa-hotel"></i> Hotel</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero-negocio hero-restaurante">
+        <div class="hero-negocio-overlay">
+            <div class="hero-negocio-content" data-aos="fade-up">
+                <span class="hero-negocio-badge"><i class="fas fa-utensils"></i> Restaurante</span>
+                <h1>Sabores <span class="text-fuego">Intensos</span></h1>
+                <p>Cocina de autor con ingredientes frescos y técnicas contemporáneas. Platos que despiertan los sentidos y crean experiencias inolvidables.</p>
+                <div class="hero-negocio-stats">
+                    <div class="stat"><span>30</span> Platos</div>
+                    <div class="stat"><span>5</span> Categorías</div>
+                    <div class="stat"><span>4.9</span> Estrellas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalogo-section">
+        <div class="catalogo-header" data-aos="fade-up">
+            <h2>Nuestra <span class="text-fuego">Carta</span></h2>
+            <p>Delicias gastronómicas para paladares exigentes</p>
+            <div class="catalogo-filtros">
+                <button class="filtro-btn active" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="Entradas">Entradas</button>
+                <button class="filtro-btn" data-filtro="Sopas">Sopas</button>
+                <button class="filtro-btn" data-filtro="Fondos">Fondos</button>
+                <button class="filtro-btn" data-filtro="Parrillas">Parrillas</button>
+                <button class="filtro-btn" data-filtro="Postres">Postres</button>
+            </div>
+        </div>
+        <div class="productos-grid" id="catalogoRestaurante"></div>
+    </section>
+
+    <footer class="footer-premium">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3><i class="fas fa-layer-group"></i> Directorio<span>Premium</span></h3>
+                <p>Conectando los mejores negocios con clientes excepcionales desde 2026.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@directoriopremium.pe</p>
+                <p><i class="fas fa-phone"></i> +51 999 888 777</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Directorio Premium.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../assets/data/restaurante.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/catalogos.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 80 });
+        document.addEventListener('DOMContentLoaded', () => {
+            inicializarCatalogo('catalogoRestaurante', productosRestaurante, { cardsPerRow: 4, showCategory: true });
+            document.querySelectorAll('.filtro-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filtro = this.dataset.filtro;
+                    const filtrados = filtro === 'todos' ? productosRestaurante : productosRestaurante.filter(p => p.categoria === filtro);
+                    inicializarCatalogo('catalogoRestaurante', filtrados, { showCategory: true });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
