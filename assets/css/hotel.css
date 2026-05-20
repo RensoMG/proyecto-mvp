@@ -1,3 +1,4 @@
+/* ========== VARIABLES HOTEL ========== */
 .pagina-hotel {
     --color-primario: #0d2137;
     --color-primario-claro: #1a3a5c;
@@ -7,6 +8,17 @@
     --color-texto-claro: #5a6e7e;
     --gradiente-hotel: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
     --gradiente-oscuro: linear-gradient(135deg, #0d2137 0%, #1a3a5c 50%, #1e4976 100%);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --radius-lg: 24px;
+}
+
+/* ========== HERO HOTEL ========== */
+.hero-negocio {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
 .hero-hotel {
@@ -14,44 +26,116 @@
     background-color: #0d2137;
 }
 
+.hero-negocio-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+.hero-negocio-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-negocio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(33, 150, 243, 0.15);
+    border-radius: 50px;
+    font-weight: 600;
+    color: var(--color-acento);
+    border: 1px solid var(--color-acento);
+    margin-bottom: 1.5rem;
+}
+
 .hero-negocio-content h1 {
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    font-weight: 800;
     color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .text-azul {
     color: var(--color-acento);
 }
 
-.hero-negocio-badge {
-    background: rgba(33,150,243,0.15);
-    color: var(--color-acento);
-    border: 1px solid var(--color-acento);
+.hero-negocio-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hero-negocio-content p {
+.hero-negocio-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.hero-negocio-stats .stat {
+    text-align: center;
     color: #ccc;
 }
 
 .hero-negocio-stats .stat span {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
     color: var(--color-acento);
 }
 
+/* ========== CATÁLOGO ========== */
 .catalogo-section {
+    padding: 4rem 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
     background: #f5f8fa;
 }
 
+.catalogo-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
 .catalogo-header h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--color-primario);
+    margin-bottom: 0.5rem;
 }
 
 .catalogo-header p {
     color: var(--color-texto-claro);
+    margin-bottom: 1.5rem;
+}
+
+.catalogo-filtros {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .filtro-btn {
-    border-color: #b0bec5;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 1.5px solid #b0bec5;
     background: #fff;
     color: var(--color-texto-claro);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
 }
 
 .filtro-btn:hover,
@@ -61,32 +145,80 @@
     border-color: var(--color-primario);
 }
 
+/* Grid de productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
 .producto-card {
     background: #fff;
+    border-radius: var(--radius-lg);
     border: 1px solid #e3f2fd;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .producto-card:hover {
-    box-shadow: 0 20px 40px rgba(13,33,55,0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(13, 33, 55, 0.08);
     border-color: var(--color-acento);
+}
+
+.producto-card-inner {
+    padding: 0;
 }
 
 .producto-card-image {
     background: var(--gradiente-hotel);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .producto-image-placeholder {
+    font-size: 3.5rem;
     color: var(--color-primario);
     opacity: 0.6;
 }
 
 .producto-categoria-tag {
-    background: rgba(13,33,55,0.8);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.25rem 0.7rem;
+    background: rgba(13, 33, 55, 0.8);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
     color: #fff;
 }
 
 .producto-quick-view {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
     color: var(--color-primario);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto-card:hover .producto-quick-view {
+    opacity: 1;
 }
 
 .producto-quick-view:hover {
@@ -94,21 +226,46 @@
     color: #fff;
 }
 
+.producto-card-info {
+    padding: 1.2rem;
+}
+
 .producto-card-nombre {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
     color: var(--color-texto);
 }
 
 .producto-card-desc {
+    font-size: 0.8rem;
     color: var(--color-texto-claro);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.producto-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .producto-card-precio {
+    font-weight: 700;
+    font-size: 1.1rem;
     color: var(--color-primario);
 }
 
 .btn-ver-mas {
-    border-color: var(--color-acento);
+    padding: 0.35rem 0.8rem;
+    border-radius: 50px;
+    background: transparent;
+    border: 1.5px solid var(--color-acento);
     color: var(--color-primario);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-ver-mas:hover {
