@@ -1,0 +1,41 @@
+.pagina-pasteleria {
+    --color-primario: #c2185b;
+    --color-primario-claro: #f06292;
+    --color-primario-oscuro: #880e4f;
+    --color-acento: #f8bbd0;
+    --color-fondo: #fff5f7;
+    --color-texto: #4a1528;
+    --color-texto-claro: #8b5a6b;
+    --gradiente-pasteleria: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+    --gradiente-oscuro: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%);
+}
+
+.hero-pasteleria {
+    background: var(--gradiente-pasteleria);
+}
+
+.hero-negocio-content h1 { color: var(--color-primario-oscuro); }
+.text-rosa { color: var(--color-primario); }
+.hero-negocio-badge { background: rgba(255,255,255,0.9); color: var(--color-primario); }
+.hero-negocio-content p { color: var(--color-texto-claro); }
+.hero-negocio-stats .stat span { color: var(--color-primario); }
+
+.catalogo-section { background: #fdf2f5; }
+
+.catalogo-header h2 { color: var(--color-primario-oscuro); }
+.catalogo-header p { color: var(--color-texto-claro); }
+.filtro-btn { border-color: #f8bbd0; background: #fff; color: var(--color-texto-claro); }
+.filtro-btn:hover, .filtro-btn.active { background: var(--color-primario); color: #fff; border-color: var(--color-primario); }
+
+.producto-card { background: #fff; border: 1px solid #f8bbd0; }
+.producto-card:hover { box-shadow: 0 20px 40px rgba(194,24,91,0.1); border-color: var(--color-acento); }
+.producto-card-image { background: var(--gradiente-pasteleria); }
+.producto-image-placeholder { color: var(--color-primario); opacity: 0.5; }
+.producto-categoria-tag { background: rgba(255,255,255,0.95); color: var(--color-primario); }
+.producto-quick-view { color: var(--color-primario); }
+.producto-quick-view:hover { background: var(--color-primario); color: #fff; }
+.producto-card-nombre { color: var(--color-texto); }
+.producto-card-desc { color: var(--color-texto-claro); }
+.producto-card-precio { color: var(--color-primario); }
+.btn-ver-mas { border-color: var(--color-acento); color: var(--color-primario); }
+.btn-ver-mas:hover { background: var(--color-primario); color: #fff; border-color: var(--color-primario); }
