@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio Premium | Negocios</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- ========== REDES SOCIALES SUPERIOR ========== -->
+    <div class="social-bar-top">
+        <div class="social-bar-container">
+            <span class="social-tagline">Síguenos en redes</span>
+            <div class="social-icons-top">
+                <a href="#" class="social-icon-top facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="social-label">Facebook</span>
+                </a>
+                <a href="#" class="social-icon-top instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span class="social-label">Instagram</span>
+                </a>
+                <a href="#" class="social-icon-top tiktok" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                    <span class="social-label">TikTok</span>
+                </a>
+                <a href="#" class="social-icon-top youtube" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                    <span class="social-label">YouTube</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fas fa-layer-group"></i></span>
+                <span class="logo-text">Directorio<span class="logo-highlight">Premium</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Negocios <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/farmacia.html"><i class="fas fa-prescription-bottle-medical"></i> Farmacia</a></li>
+                        <li><a href="pages/bodega.html"><i class="fas fa-store"></i> Bodega</a></li>
+                        <li><a href="pages/pasteleria.html"><i class="fas fa-cake-candles"></i> Pastelería</a></li>
+                        <li><a href="pages/salon.html"><i class="fas fa-scissors"></i> Salón de Belleza</a></li>
+                        <li><a href="pages/restaurante.html"><i class="fas fa-utensils"></i> Restaurante</a></li>
+                        <li><a href="pages/hotel.html"><i class="fas fa-hotel"></i> Hotel</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#catalogo" class="nav-link">Catálogo</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO CON ESCENA 3D ========== -->
+    <section class="hero-3d" id="hero3D">
+        <canvas id="threeCanvas"></canvas>
+        <div class="hero-overlay">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+                <span class="hero-badge">Directorio Premium 2026</span>
+                <h1 class="hero-title">
+                    Descubre <span class="gradient-text">Negocios</span><br>Excepcionales
+                </h1>
+                <p class="hero-subtitle">
+                    Explora nuestra colección curada de los mejores negocios. 
+                    Farmacia, bodega, pastelería, salón, restaurante y hotel — 
+                    todo en un solo lugar.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#catalogo" class="btn btn-primary">
+                        <i class="fas fa-compass"></i> Explorar Catálogo
+                    </a>
+                    <a href="#contacto" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Contáctanos
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="6">0</span>
+                        <span class="stat-label">Negocios</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="150">0</span>
+                        <span class="stat-label">Productos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="24">0</span>
+                        <span class="stat-label">Horas de Atención</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1500">
+                <span>Desliza para descubrir</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CATÁLOGO DE NEGOCIOS ========== -->
+    <section class="catalogo-negocios" id="catalogo">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Nuestros Negocios</span>
+            <h2 class="section-title">Seis Experiencias <span class="gradient-text">Únicas</span></h2>
+            <p class="section-desc">Cada negocio con identidad propia, productos seleccionados y atención premium.</p>
+        </div>
+
+        <div class="negocios-grid" id="negociosGrid">
+            <!-- Farmacia -->
+            <div class="negocio-card" data-aos="fade-up" data-aos-delay="100" data-categoria="farmacia">
+                <div class="card-3d-wrapper">
+                    <div class="card-inner">
+                        <div class="card-front" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-circle icon-farmacia">
+                                    <i class="fas fa-prescription-bottle-medical"></i>
+                                </div>
+                            </div>
+                            <span class="card-categoria">Salud</span>
+                            <h3 class="card-titulo">Farmacia</h3>
+                            <p class="card-productos-count">30 productos</p>
+                        </div>
+                        <div class="card-back" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);">
+                            <p class="card-desc">Productos farmacéuticos de calidad con atención profesional.</p>
+                            <a href="pages/farmacia.html" class="btn-card">Ver Catálogo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bodega -->
+            <div class="negocio-card" data-aos="fade-up" data-aos-delay="200" data-categoria="bodega">
+                <div class="card-3d-wrapper">
+                    <div class="card-inner">
+                        <div class="card-front" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%);">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-circle icon-bodega">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                            </div>
+                            <span class="card-categoria">Tienda</span>
+                            <h3 class="card-titulo">Bodega</h3>
+                            <p class="card-productos-count">28 productos</p>
+                        </div>
+                        <div class="card-back" style="background: linear-gradient(135deg, #e65100 0%, #ef6c00 50%, #f57c00 100%);">
+                            <p class="card-desc">Tu minimarket de confianza con productos cotidianos y cercanía.</p>
+                            <a href="pages/bodega.html" class="btn-card">Ver Catálogo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pastelería -->
+            <div class="negocio-card" data-aos="fade-up" data-aos-delay="300" data-categoria="pasteleria">
+                <div class="card-3d-wrapper">
+                    <div class="card-inner">
+                        <div class="card-front" style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-circle icon-pasteleria">
+                                    <i class="fas fa-cake-candles"></i>
+                                </div>
+                            </div>
+                            <span class="card-categoria">Repostería</span>
+                            <h3 class="card-titulo">Pastelería</h3>
+                            <p class="card-productos-count">25 productos</p>
+                        </div>
+                        <div class="card-back" style="background: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%);">
+                            <p class="card-desc">Delicias artesanales con los mejores ingredientes para momentos especiales.</p>
+                            <a href="pages/pasteleria.html" class="btn-card">Ver Catálogo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salón -->
+            <div class="negocio-card" data-aos="fade-up" data-aos-delay="400" data-categoria="salon">
+                <div class="card-3d-wrapper">
+                    <div class="card-inner">
+                        <div class="card-front" style="background: linear-gradient(135deg, #fafafa 0%, #f5f0e8 50%, #ebe0cc 100%);">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-circle icon-salon">
+                                    <i class="fas fa-scissors"></i>
+                                </div>
+                            </div>
+                            <span class="card-categoria">Belleza</span>
+                            <h3 class="card-titulo">Salón</h3>
+                            <p class="card-productos-count">26 productos</p>
+                        </div>
+                        <div class="card-back" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3d3d3d 100%);">
+                            <p class="card-desc">Servicios premium de belleza y cuidado personal con estilo luxury.</p>
+                            <a href="pages/salon.html" class="btn-card">Ver Catálogo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurante -->
+            <div class="negocio-card" data-aos="fade-up" data-aos-delay="500" data-categoria="restaurante">
+                <div class="card-3d-wrapper">
+                    <div class="card-inner">
+                        <div class="card-front" style="background: linear-gradient(135deg, #fbe9e7 0%, #ffccbc 50%, #ffab91 100%);">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-circle icon-restaurante">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                            </div>
+                            <span class="card-categoria">Gastronomía</span>
+                            <h3 class="card-titulo">Restaurante</h3>
+                            <p class="card-productos-count">30 productos</p>
+                        </div>
+                        <div class="card-back" style="background: linear-gradient(135deg, #b71c1c 0%, #c62828 50%, #d32f2f 100%);">
+                            <p class="card-desc">Experiencia culinaria inolvidable con platillos de autor y sabores intensos.</p>
+                            <a href="pages/restaurante.html" class="btn-card">Ver Catálogo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel -->
+            <div class="negocio-card" data-aos="fade-up" data-aos-delay="600" data-categoria="hotel">
+                <div class="card-3d-wrapper">
+                    <div class="card-inner">
+                        <div class="card-front" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-circle icon-hotel">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                            </div>
+                            <span class="card-categoria">Hospedaje</span>
+                            <h3 class="card-titulo">Hotel</h3>
+                            <p class="card-productos-count">27 productos</p>
+                        </div>
+                        <div class="card-back" style="background: linear-gradient(135deg, #0d2137 0%, #1a3a5c 50%, #1e4976 100%);">
+                            <p class="card-desc">Estancias de lujo con diseño sofisticado y vistas espectaculares.</p>
+                            <a href="pages/hotel.html" class="btn-card">Ver Catálogo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECCIÓN CARACTERÍSTICAS ========== -->
+    <section class="features-section" id="features">
+        <div class="features-grid">
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="feature-icon-wrap">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Catálogo Dinámico</h3>
+                <p>Productos cargados desde base de datos simulada con renderizado automático.</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="feature-icon-wrap">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Diseño Único por Negocio</h3>
+                <p>Cada página tiene identidad visual, colores y experiencia diferenciada.</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-icon-wrap">
+                    <i class="fas fa-window-maximize"></i>
+                </div>
+                <h3>Modales Premium</h3>
+                <p>Ventanas emergentes elegantes con información detallada de cada producto.</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="feature-icon-wrap">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <h3>Interfaz 3D Avanzada</h3>
+                <p>Escena tridimensional interactiva con WebGL en la página principal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-premium" id="contacto">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3><i class="fas fa-layer-group"></i> Directorio<span>Premium</span></h3>
+                <p>Conectando los mejores negocios con clientes excepcionales desde 2026.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Negocios</h4>
+                <ul>
+                    <li><a href="pages/farmacia.html">Farmacia</a></li>
+                    <li><a href="pages/bodega.html">Bodega</a></li>
+                    <li><a href="pages/pasteleria.html">Pastelería</a></li>
+                    <li><a href="pages/salon.html">Salón de Belleza</a></li>
+                    <li><a href="pages/restaurante.html">Restaurante</a></li>
+                    <li><a href="pages/hotel.html">Hotel</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@directoriopremium.pe</p>
+                <p><i class="fas fa-phone"></i> +51 999 888 777</p>
+                <p><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Directorio Premium. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Three.js desde CDN -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/three-scene.js" type="module"></script>
+</body>
+</html>

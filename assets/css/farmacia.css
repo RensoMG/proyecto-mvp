@@ -1,0 +1,271 @@
+/* ========== VARIABLES FARMACIA ========== */
+.pagina-farmacia {
+    --color-primario: #2e7d32;
+    --color-primario-claro: #4caf50;
+    --color-primario-oscuro: #1b5e20;
+    --color-acento: #81c784;
+    --color-fondo: #f8fdf8;
+    --color-texto: #1a2e1a;
+    --color-texto-claro: #5a7a5a;
+    --gradiente-farmacia: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+    --gradiente-oscuro: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+}
+
+/* ========== HERO FARMACIA ========== */
+.hero-negocio {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-farmacia {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 30%, #a5d6a7 60%, #81c784 100%);
+}
+
+.hero-negocio-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+.hero-negocio-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-negocio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hero-negocio-content h1 {
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--color-primario-oscuro);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.text-verde {
+    color: var(--color-primario);
+}
+
+.hero-negocio-content p {
+    font-size: 1.1rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-negocio-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.hero-negocio-stats .stat {
+    text-align: center;
+}
+
+.hero-negocio-stats .stat span {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primario);
+}
+
+/* ========== CATÁLOGO ========== */
+.catalogo-section {
+    padding: 4rem 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.catalogo-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.catalogo-header h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primario-oscuro);
+    margin-bottom: 0.5rem;
+}
+
+.catalogo-header p {
+    color: var(--color-texto-claro);
+    margin-bottom: 1.5rem;
+}
+
+.catalogo-filtros {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 1.5px solid #c8e6c9;
+    background: #fff;
+    color: var(--color-texto-claro);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+    background: var(--color-primario);
+    color: #fff;
+    border-color: var(--color-primario);
+}
+
+/* Grid de productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+.producto-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    border: 1px solid #e8f5e9;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.producto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(46, 125, 50, 0.12);
+    border-color: var(--color-acento);
+}
+
+.producto-card-inner {
+    padding: 0;
+}
+
+.producto-card-image {
+    background: var(--gradiente-farmacia);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.producto-image-placeholder {
+    font-size: 3.5rem;
+    color: var(--color-primario);
+    opacity: 0.5;
+}
+
+.producto-categoria-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.25rem 0.7rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+.producto-quick-view {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--color-primario);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto-card:hover .producto-quick-view {
+    opacity: 1;
+}
+
+.producto-quick-view:hover {
+    background: var(--color-primario);
+    color: #fff;
+}
+
+.producto-card-info {
+    padding: 1.2rem;
+}
+
+.producto-card-nombre {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    color: var(--color-texto);
+}
+
+.producto-card-desc {
+    font-size: 0.8rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.producto-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.producto-card-precio {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primario);
+}
+
+.btn-ver-mas {
+    padding: 0.35rem 0.8rem;
+    border-radius: 50px;
+    background: transparent;
+    border: 1.5px solid var(--color-acento);
+    color: var(--color-primario);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+    background: var(--color-primario);
+    color: #fff;
+    border-color: var(--color-primario);
+}
