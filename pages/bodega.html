@@ -3,134 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodega | Directorio Premium</title>
+    <title>ecofio — Bodega</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/bodega.css">
     <link rel="stylesheet" href="../assets/css/modal.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
-<body class="pagina-bodega">
-    <!-- Social Bar Top -->
-    <div class="social-bar-top">
-        <div class="social-bar-container">
-            <span class="social-tagline">Síguenos en redes</span>
-            <div class="social-icons-top">
-                <a href="#" class="social-icon-top facebook"><i class="fab fa-facebook-f"></i><span class="social-label">Facebook</span></a>
-                <a href="#" class="social-icon-top instagram"><i class="fab fa-instagram"></i><span class="social-label">Instagram</span></a>
-                <a href="#" class="social-icon-top tiktok"><i class="fab fa-tiktok"></i><span class="social-label">TikTok</span></a>
-            </div>
+<body>
+    <div class="social-bar">
+        <div class="social-bar__container">
+            <span class="social-bar__label">Síguenos</span>
+            <a href="#" class="social-bar__link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-bar__link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-bar__link"><i class="fab fa-tiktok"></i></a>
         </div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-icon"><i class="fas fa-layer-group"></i></span>
-                <span class="logo-text">Directorio<span class="logo-highlight">Premium</span></span>
+    <header class="navbar" id="navbar">
+        <div class="navbar__container">
+            <a href="../index.html" class="navbar__logo">
+                <span class="navbar__logo-text">ecofio</span>
+                <span class="navbar__logo-dot"></span>
             </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link active dropdown-toggle">Negocios <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="farmacia.html"><i class="fas fa-prescription-bottle-medical"></i> Farmacia</a></li>
-                        <li><a href="bodega.html" class="active"><i class="fas fa-store"></i> Bodega</a></li>
-                        <li><a href="pasteleria.html"><i class="fas fa-cake-candles"></i> Pastelería</a></li>
-                        <li><a href="salon.html"><i class="fas fa-scissors"></i> Salón</a></li>
-                        <li><a href="restaurante.html"><i class="fas fa-utensils"></i> Restaurante</a></li>
-                        <li><a href="hotel.html"><i class="fas fa-hotel"></i> Hotel</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <button class="nav-toggle" id="navToggle">
-                <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Bodega -->
-    <section class="hero-negocio hero-bodega">
-        <div class="hero-negocio-overlay">
-            <div class="hero-negocio-content" data-aos="fade-up">
-                <span class="hero-negocio-badge"><i class="fas fa-store"></i> Bodega</span>
-                <h1>Tu Tienda <span class="text-naranja">de Barrio</span></h1>
-                <p>Productos cotidianos con la calidez de siempre. Abarrotes, bebidas, snacks y más, directo a tu hogar.</p>
-                <div class="hero-negocio-stats">
-                    <div class="stat"><span>28</span> Productos</div>
-                    <div class="stat"><span>6</span> Categorías</div>
-                    <div class="stat"><span>8am-10pm</span> Horario</div>
-                </div>
+            <nav class="navbar__menu" id="nav-menu">
+                <ul class="navbar__list">
+                    <li><a href="../index.html" class="navbar__link">Inicio</a></li>
+                    <li><a href="farmacia.html" class="navbar__link">Farmacia</a></li>
+                    <li><a href="bodega.html" class="navbar__link active">Bodega</a></li>
+                    <li><a href="pasteleria.html" class="navbar__link">Pastelería</a></li>
+                    <li><a href="salon.html" class="navbar__link">Salón</a></li>
+                    <li><a href="restaurante.html" class="navbar__link">Restaurante</a></li>
+                    <li><a href="hotel.html" class="navbar__link">Hotel</a></li>
+                </ul>
+            </nav>
+            <div class="navbar__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-        <div class="hero-particles"></div>
+    </header>
+
+    <section class="hero-negocio" style="background-image: linear-gradient(rgba(180, 83, 9, 0.7), rgba(180, 83, 9, 0.4)), url('https://images.unsplash.com/photo-1542838132-92c53300491b?w=1200&auto=format&fit=crop&q=80');">
+        <div class="hero-negocio__contenido" data-aos="fade-up">
+            <h1>Bodega <span>Ecofio</span></h1>
+            <p>Tu minimarket de confianza, todos los días</p>
+        </div>
     </section>
 
-    <!-- Catálogo -->
-    <section class="catalogo-section">
-        <div class="catalogo-header" data-aos="fade-up">
-            <h2>Nuestro <span class="text-naranja">Catálogo</span></h2>
-            <p>Los esenciales de tu día a día en un solo lugar</p>
-            <div class="catalogo-filtros">
-                <button class="filtro-btn active" data-filtro="todos">Todos</button>
-                <button class="filtro-btn" data-filtro="Abarrotes">Abarrotes</button>
-                <button class="filtro-btn" data-filtro="Bebidas">Bebidas</button>
-                <button class="filtro-btn" data-filtro="Snacks">Snacks</button>
-                <button class="filtro-btn" data-filtro="Lácteos">Lácteos</button>
-                <button class="filtro-btn" data-filtro="Limpieza">Limpieza</button>
-                <button class="filtro-btn" data-filtro="Cuidado Personal">Cuidado Personal</button>
-            </div>
+    <main class="catalogo-seccion">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-down">Productos de Bodega</h2>
+            <p class="section-subtitle" data-aos="fade-up">Más de 25 artículos para tu hogar</p>
+            <div id="bodega-productos" class="productos-grid"></div>
         </div>
-        <div class="productos-grid" id="catalogoBodega"></div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer-premium">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <h3><i class="fas fa-layer-group"></i> Directorio<span>Premium</span></h3>
-                <p>Conectando los mejores negocios con clientes excepcionales desde 2026.</p>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <span class="navbar__logo-text">ecofio</span>
+                <p>Directorio inteligente de negocios</p>
             </div>
-            <div class="footer-contact">
-                <h4>Contacto</h4>
-                <p><i class="fas fa-envelope"></i> info@directoriopremium.pe</p>
-                <p><i class="fas fa-phone"></i> +51 999 888 777</p>
+            <div class="footer__links">
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Contacto</a>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2025 ecofio. Todos los derechos reservados.</p>
             </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 Directorio Premium.</p></div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="../assets/data/bodega.js"></script>
+    <script src="../assets/js/animations.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/data/bodega.js"></script>
     <script src="../assets/js/modal.js"></script>
     <script src="../assets/js/catalogos.js"></script>
-    <script src="../assets/js/animations.js"></script>
     <script>
-        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 80 });
-        
         document.addEventListener('DOMContentLoaded', () => {
-            inicializarCatalogo('catalogoBodega', productosBodega, {
-                cardsPerRow: 4,
-                showCategory: true
-            });
-
-            document.querySelectorAll('.filtro-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    const filtro = this.dataset.filtro;
-                    const productosFiltrados = filtro === 'todos' 
-                        ? productosBodega 
-                        : productosBodega.filter(p => p.categoria === filtro);
-                    inicializarCatalogo('catalogoBodega', productosFiltrados, { showCategory: true });
-                });
-            });
+            renderizarCatalogo('bodega-productos', productosBodega);
         });
     </script>
 </body>

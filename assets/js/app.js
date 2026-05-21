@@ -1,93 +1,100 @@
-// ========== INICIALIZACIÓN AOS ==========
-AOS.init({
-    duration: 800,
-    easing: 'ease-out-cubic',
-    once: true,
-    offset: 80,
-    disable: 'mobile',
-});
+// ==================== NAVEGACIÓN MÓVIL ====================
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
 
-// ========== NAVBAR SCROLL EFFECT ==========
-const navbar = document.getElementById('navbar');
-let lastScroll = 0;
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
 
+    // Cerrar menú al hacer clic en enlace
+    document.querySelectorAll('.navbar__link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+}
+
+// ==================== EFECTO SCROLL NAVBAR ====================
+const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
+    if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-
-    lastScroll = currentScroll;
 });
 
-// ========== MOBILE NAV TOGGLE ==========
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
+// ==================== ESCENA 3D CON THREE.JS ====================
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('three-canvas');
+    if (!canvas) return;
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 5;
 
-// Cerrar menú al hacer click en un enlace
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Geometría: toroide anudado que flota
+    const geometry = new THREE.TorusKnotGeometry(1, 0.3, 128, 16);
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x3b82f6,
+        metalness: 0.3,
+        roughness: 0.4,
+        wireframe: false,
     });
-});
+    const knot = new THREE.Mesh(geometry, material);
+    scene.add(knot);
 
-// ========== COUNTER ANIMATION ==========
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number[data-count]');
+    // Partículas esfera
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 800;
+    const posArray = new Float32Array(particlesCount * 3);
+    for (let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 10;
+    }
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.02,
+        color: 0x60a5fa,
+        blending: THREE.AdditiveBlending,
+    });
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-count'));
-                const duration = 2000;
-                const start = 0;
-                const startTime = performance.now();
+    // Luces
+    const ambientLight = new THREE.AmbientLight(0x404060);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0x3b82f6, 1, 10);
+    pointLight.position.set(2, 2, 4);
+    scene.add(pointLight);
+    const pointLight2 = new THREE.PointLight(0xa78bfa, 0.5, 10);
+    pointLight2.position.set(-2, -1, 3);
+    scene.add(pointLight2);
 
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 4); // ease-out quart
-                    const current = Math.floor(eased * target);
-                    counter.textContent = current;
+    // Animación
+    function animate() {
+        requestAnimationFrame(animate);
 
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                }
+        knot.rotation.x += 0.002;
+        knot.rotation.y += 0.003;
+        particlesMesh.rotation.y -= 0.0005;
+        particlesMesh.rotation.x += 0.0003;
 
-                requestAnimationFrame(updateCounter);
-                observer.unobserve(counter);
-            }
-        });
-    }, { threshold: 0.5 });
+        renderer.render(scene, camera);
+    }
 
-    counters.forEach(counter => observer.observe(counter));
-}
+    animate();
 
-// Inicializar contadores cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', animateCounters);
-
-// ========== SMOOTH SCROLL PARA ENLACES INTERNOS ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetEl = document.querySelector(targetId);
-        if (targetEl) {
-            e.preventDefault();
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+    // Ajuste responsive
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
     });
 });
